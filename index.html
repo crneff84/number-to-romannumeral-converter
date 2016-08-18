@@ -6,22 +6,22 @@
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title>Roman Numeral Converter</title>
+    <title>Number to Roman Numeral Converter</title>
   </head>
   <body>
     <div class="container">
-      <h1>Roman Numeral Converter</h1>
+      <h1>Number to Roman Numeral Converter</h1>
       <div id="blanks">
         <form name="userform">
           <div class="form-group">
-            <label for="rn-input">Enter a Roman numeral</label>
-            <input id="rn-input" pattern="^[ivxlcdmIVXLCDM]+$" type="text" class="form-control">
+            <label for="number-input">Enter a number between 1 and 3999</label>
+            <input id="number-input" type="number" class="form-control">
           </div>
           <button type="submit" class="btn btn-warning">Convert!</button>
         </form>
       </div>
       <div id="results">
-        <h2>Here is your number!</h2>
+        <h2>Here is your Roman Numeral!</h2>
         <h3><span id="output-display"></span></h3>
       </div>
     </div>

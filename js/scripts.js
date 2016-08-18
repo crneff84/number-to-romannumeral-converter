@@ -1,31 +1,22 @@
 //Backend
-var total = 0;
-var converted = function(romanNumeral) {
-      var romanNumeralArray = romanNumeral.split("");
-      for (var i = 0; i < romanNumeralArray.length; i += 1) {
-        if (romanNumeralArray[i] === "I") {
-          romanNumeralArray.splice(i, 1, 1);
-          total += romanNumeralArray[i];
-        } else if (romanNumeralArray[i] === "V") {
-          romanNumeralArray.splice(i, 1, 5);
-          total += romanNumeralArray[i]
-        } else if (romanNumeralArray[i] === "X") {
-          romanNumeralArray.splice(i, 1, 10);
-          total += romanNumeralArray[i]
-        } else if (romanNumeralArray[i] === "L") {
-          romanNumeralArray.splice(i, 1, 50);
-          total += romanNumeralArray[i]
-        } else if (romanNumeralArray[i] === "C") {
-          romanNumeralArray.splice(i, 1, 100);
-          total += romanNumeralArray[i]
-        } else if (romanNumeralArray[i] === "D") {
-          romanNumeralArray.splice(i, 1, 500);
-          total += romanNumeralArray[i]
-        } else if (romanNumeralArray[i] === "M") {
-          romanNumeralArray.splice(i, 1, 1000);
-          total += romanNumeralArray[i]
-        }
-  } return total;
+function toRoman(number) {
+  var ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+  var tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+  var hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+  var thousands = ["", "M", "MM", "MMM"]
+  var onesInput = parseInt(number.slice(-1));
+  var tensInput = parseInt(number.slice(-2,-1));
+  var hundredsInput = parseInt(number.slice(-3,-2));
+  var thousandsInput = parseInt(number.slice(-4,-3));
+
+  var numberArray = [thousandsInput, hundredsInput, tensInput, onesInput];
+
+  for (index= 0; index<numberArray.length; index+=1) {
+    if (!numberArray[index]) {
+      numberArray[index]=0;
+    }
+  }
+  return thousands[numberArray[0]]+hundreds[numberArray[1]]+tens[numberArray[2]]+ones[numberArray[3]];
 }
 
 
@@ -33,11 +24,10 @@ var converted = function(romanNumeral) {
 $(document).ready(function(){
   $("#blanks form").submit(function(event){
   event.preventDefault();
-  var userInput = $("#rn-input").val().toUpperCase();
-  var output = converted(userInput);
+  var userInput = $("#number-input").val();
+  var output = toRoman(userInput);
   $("#output-display").empty().append(output);
   $("#blanks").hide();
   $("#results").show();
-  console.log(output)
   });
 });
