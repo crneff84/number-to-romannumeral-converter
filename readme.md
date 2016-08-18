@@ -1,12 +1,12 @@
-# _Roman Numeral Converter_
+# _Number to Roman Numeral Converter_
 
-#### _This program converts roman numerals to numbers, 08/18/2016_
+#### _This program converts numbers to roman numerals, 08/18/2016_
 
 #### By _**Chance Neff**_
 
 ## Description
 
-_This program converts roman numerals to numbers. The user inputs a roman numeral and the program outputs its number equivalent_
+_This program converts numbers to roman numerals. The user inputs a number and the program outputs its roman numeral equivalent_
 
 ## Setup/Installation Requirements
 
