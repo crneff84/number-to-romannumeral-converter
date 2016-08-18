@@ -10,13 +10,7 @@ _This program converts numbers to roman numerals. The user inputs a number and t
 
 ## Setup/Installation Requirements
 
-* __
-* __
-* __
-* __
-* __
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* _Enter a number and it will be converted to a Roman numeral._
 
 ## Known Bugs
 
